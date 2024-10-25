@@ -18,7 +18,7 @@ int main(){
     // ---- end input and malloc----
 
     // implement here
-    int sum[NF];
+    int sum[NA-NF+1];
     int num_threads = 4;
     omp_set_num_threads(num_threads);
     #pragma omp parallel for
@@ -30,7 +30,7 @@ int main(){
         sum[i] = tmp; 
     }
 
-    for(int i = 0; i < num_threads; i++){
+    for(int i = 0; i < (NA-NF+1); i++){
         printf("%d\n", sum[i]);
     }
 
