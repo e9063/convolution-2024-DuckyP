@@ -18,17 +18,19 @@ int main(){
 
     // implement here
     int *sum = malloc(sizeof(int) * (NA-NF+1));
-    printf("--------%d\n", (NA-NF+1));
     for(int i = 0; i < (NA-NF+1); i++){
         int tmp = 0;
         for(int j = 0; j < NF; j++){
             tmp += (A[i+j] * F[NF-1-j]);
         }
         sum[i] = tmp; 
+    }
+    for(int i = 0; i < (NA-NF+1); i++){
         printf("%d\n", sum[i]);
     }
 
     // ---- free memory ----
+    free(sum);
     free(F);
     free(A);
     // ---- end free ----

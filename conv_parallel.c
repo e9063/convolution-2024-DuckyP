@@ -29,12 +29,12 @@ int main(){
         }
         sum[i] = tmp; 
     }
-
     for(int i = 0; i < (NA-NF+1); i++){
         printf("%d\n", sum[i]);
     }
 
     // ---- free memory ----
+    free(sum);
     free(F);
     free(A);
     // ---- end free ----
