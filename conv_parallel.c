@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include <omp.h>
+#include<omp.h>
 
 int main(){
     // ---- input and malloc A, F ----
@@ -18,7 +18,7 @@ int main(){
     // ---- end input and malloc----
 
     // implement here
-    int sum[NA-NF+1];
+    int *sum = malloc(sizeof(int) * (NA-NF+1));
     int num_threads = 4;
     omp_set_num_threads(num_threads);
     #pragma omp parallel for

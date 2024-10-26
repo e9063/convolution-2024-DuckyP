@@ -17,7 +17,7 @@ int main(){
     // ---- end input and malloc----
 
     // implement here
-    int sum[NA-NF+1];
+    int *sum = malloc(sizeof(int) * (NA-NF+1));
     printf("--------%d\n", (NA-NF+1));
     for(int i = 0; i < (NA-NF+1); i++){
         int tmp = 0;
